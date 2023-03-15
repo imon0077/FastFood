@@ -54,5 +54,10 @@ namespace FastFood.Repository
             _userManager.CreateAsync(user, "Admin@123").GetAwaiter().GetResult();
             _userManager.AddToRoleAsync(user, "Admin");
         }
+
+        public void testing()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
