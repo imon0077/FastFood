@@ -38,8 +38,10 @@ namespace FastFood.Web.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(CategoryViewModel vm)
         {
-            Category model = new Category();
-            model.Title = vm.Title;
+            Category model = new()
+            {
+                Title = vm.Title
+            };
             _context.Categories.Add(model);
             _context.SaveChanges();
             return RedirectToAction("Index");
