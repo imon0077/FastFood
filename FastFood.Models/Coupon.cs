@@ -13,7 +13,7 @@ namespace FastFood.Models
         public string Type { get; set; } = string.Empty;
         public double Discount { get; set; }
         public double MinimumAmount { get; set; }
-        public byte[] ?CouponPicture { get; set; }
+        public byte[] CouponPicture { get; set; }
         public bool IsActive { get; set; }
     }
 

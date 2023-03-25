@@ -12,9 +12,9 @@ namespace FastFood.Models
         [Key]
         public int Id { get; set; }
         public int ItemId { get; set; }
-        public Item ?Item { get; set; }
+        public Item Item { get; set; }
         public string ApplicationUserId { get; set; } = string.Empty;
-        public ApplicationUser ?ApplicationUser { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
 
         [Required, MinLength(1)]
         public int Count { get; set; }

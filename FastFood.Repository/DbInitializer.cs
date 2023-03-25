@@ -13,7 +13,7 @@ namespace FastFood.Repository
     {
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly ApplicationDbContext _context = null!;
+        private readonly ApplicationDbContext _context;
 
         public DbInitializer(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager, ApplicationDbContext context)
         {
@@ -38,6 +38,7 @@ namespace FastFood.Repository
             }
 
             if (_context.Roles.Any(x => x.Name == "Admin")) return;
+
             _roleManager.CreateAsync(new IdentityRole("Manager")).GetAwaiter().GetResult(); 
             _roleManager.CreateAsync(new IdentityRole("Admin")).GetAwaiter().GetResult(); 
             _roleManager.CreateAsync(new IdentityRole("Customer")).GetAwaiter().GetResult();
@@ -55,9 +56,5 @@ namespace FastFood.Repository
             _userManager.AddToRoleAsync(user, "Admin");
         }
 
-        public void testing()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -11,7 +11,7 @@ namespace FastFood.Models
     {
         public int Id { get; set; }
         public string ApplicationUserId { get; set; } = string.Empty;
-        public ApplicationUser ?ApplicationUser { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime OrderDate { get; set; }
